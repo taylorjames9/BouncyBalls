@@ -10,9 +10,19 @@ public class CanonWCoroutine : MonoBehaviour {
 	public float scale;
 	public float growthRate;
 	List<GameObject> myListOfBalloons = new List<GameObject> ();
+	//public Font font;
+	//public GameObject myText0; 
+	public TextMesh myButtonText; 
+	public Vector3 myVector3forBubbleAndText; 
+	//public string[] arrayOfStrings;
 
 	// Use this for initialization
 	void Start () {
+		/*arrayOfStrings = new string[]{"Condoms are bad", "Condoms are good", "Condoms go crazy"};
+
+		foreach (string rumor in arrayOfStrings) {
+			print (rumor);
+		}*/
 		bubbleCounter = 0; 
 		scale = 1.1f;
 		growthRate = 1.0f;
@@ -21,7 +31,6 @@ public class CanonWCoroutine : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
 		foreach (GameObject listBalloon in myListOfBalloons) {
 			if (listBalloon.transform.localScale.x < 3) {
 				listBalloon.transform.localScale += new Vector3 (0.05F, 0.05f, 0f);
@@ -29,27 +38,21 @@ public class CanonWCoroutine : MonoBehaviour {
 		}
 	}
 	IEnumerator thoughtRepeating(){
-		while (bubbleCounter <= 15) {
+		while (bubbleCounter <= 10) {
 			FireAThought ();
-			yield return new WaitForSeconds (0.1f);
+			yield return new WaitForSeconds (0.3f);
 		}
 		}
 
 	void FireAThought(){
-		GameObject aBubbleThought = Instantiate (thought, transform.position, Quaternion.identity) as GameObject;
-		aBubbleThought.rigidbody.AddForce (-5f, 4f, 0f, ForceMode.Force);
+		Vector3 myVector3forBubbleAndText = new Vector3(7f, -3f, -2f);
+		GameObject aBubbleThought = Instantiate (thought, myVector3forBubbleAndText, Quaternion.identity) as GameObject;
 		audio.Play ();
-		//ThoughtGrow (aBubbleThought);
 		myListOfBalloons.Add (aBubbleThought);
+		/*TextMesh myTextInstance;
+		myTextInstance = Instantiate(myButtonText, myVector3forBubbleAndText, Quaternion.identity) as TextMesh;
+		myTextInstance.transform.parent = aBubbleThought.transform;*/
+		aBubbleThought.rigidbody.AddForce (Random.Range(-2f,-5f), Random.Range(2f,4f), 0f, ForceMode.Force);
 		bubbleCounter++;
-		//print (bubbleCounter);
 	}
-
-	/*void ThoughtGrow(GameObject passedInThought){
-		passedInThought.transform.localScale = Vector3.one * scale;
-		scale += growthRate * Time.deltaTime;
-	}*/
 }
-
-
-

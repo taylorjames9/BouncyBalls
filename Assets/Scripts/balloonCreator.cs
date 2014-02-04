@@ -1,10 +1,10 @@
-﻿/*using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
 public class balloonCreator : MonoBehaviour {
 
-
+	/*
 	public GameObject prefaBalloon;
 	public int numBalloons;
 	List<GameObject> myListOfBalloons = new List<GameObject> ();
@@ -60,7 +60,7 @@ public class balloonCreator : MonoBehaviour {
 
 			}
 		}
-	}
+	}*/
 
-}*/
+}
 
