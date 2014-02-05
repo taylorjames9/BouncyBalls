@@ -30,10 +30,10 @@ public class Gui_Adder : MonoBehaviour {
 		myTextInstance.text = arrayOfStrings [randomNum];
 	}
 
-	void OnTap( TapGesture gesture ) 
+	/*void OnTap( TapGesture gesture ) 
 	{
 		// Number of taps performed
 		//int taps = gesture.Taps;
 		print ("I got tapped at Rachels' Warehouse!");
-	}
+	}*/
 }
