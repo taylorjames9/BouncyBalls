@@ -5,19 +5,19 @@ using System.Collections;
 // iphone4 960 x 640
 public class SampleUI : MonoBehaviour
 {
-    public GUISkin skin;
+	public GUISkin skin;
     
     public Color titleColor = Color.white;
     GUIStyle titleStyle;
     GUIStyle statusStyle;
     GUIStyle helpStyle;
 
-    Rect topBarRect = new Rect( 0, -4, 600, 56 );
-    Rect backButtonRect = new Rect( 5, 2, 80, 46 );
-    Rect titleRect = new Rect( 100, 2, 400, 46 );
-    Rect helpButtonRect = new Rect( 515, 2, 80, 46 );
-    Rect statusTextRect = new Rect( 30, 336, 540, 60 );
-    Rect helpRect = new Rect( 50, 60, 500, 300 );
+	Rect topBarRect = new Rect( 0, 0, 0, 0 );
+	Rect backButtonRect = new Rect( 0, 0, 0, 0 );
+	Rect titleRect = new Rect( 0, 0, 0, 0 );
+	Rect helpButtonRect = new Rect( 0, 0, 0, 0 );
+	Rect statusTextRect = new Rect( 0, 0, 0, 0 );
+	Rect helpRect = new Rect( 0, 0, 0, 0 );
 
     string statusText = "";//"status text goes here";
     public string StatusText

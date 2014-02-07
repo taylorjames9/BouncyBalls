@@ -9,7 +9,7 @@ public class CanonWCoroutine : MonoBehaviour {
 	public int bubbleCounter;
 	public float scale;
 	public float growthRate;
-	List<GameObject> myListOfBalloons = new List<GameObject> ();
+	public List<GameObject> myListOfBalloons = new List<GameObject> ();
 	//public Font font;
 	//public GameObject myText0; 
 	public TextMesh myButtonText; 

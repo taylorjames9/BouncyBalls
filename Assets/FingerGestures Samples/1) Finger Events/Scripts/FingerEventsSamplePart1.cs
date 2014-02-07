@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 /// <summary>
 /// This sample demonstrates the following Finger Event Detectors:
@@ -21,12 +22,15 @@ public class FingerEventsSamplePart1 : SampleBase
     public GameObject fingerStationaryObject;
     public GameObject fingerHoverObject;
     public GameObject fingerUpObject;
+	public GameObject prefabParticle;
 
     public float chargeDelay = 0.5f;
     public float chargeTime = 5.0f;
     public float minSationaryParticleEmissionCount = 5;
     public float maxSationaryParticleEmissionCount = 50;
     public Material highlightMaterial;
+	public CanonWCoroutine scriptwList;
+
 
     #endregion
 
@@ -38,8 +42,25 @@ public class FingerEventsSamplePart1 : SampleBase
 
     void OnFingerDown( FingerDownEvent e )
     {
-        if( e.Selection == fingerDownObject )
-            SpawnParticles( fingerDownObject );
+
+		int i = 0;
+
+		if (e.Selection == fingerDownObject) {
+
+			GameObject spawner = GameObject.Find("Cylinder");
+			spawner.audio.Play();
+
+			//SpawnParticles( fingerDownObject );
+			do {
+				//scriptwList.myListOfBalloons.Remove(fingerDownObject);
+
+				Destroy(fingerDownObject);
+				//fingerDownObject.renderer.eanbled = false;
+				GameObject prefabulous = Instantiate (prefabParticle, fingerDownObject.transform.position, transform.rotation) as GameObject;
+				//Debug.Log(finger.Position);
+				i++;
+			} while (i < 2);
+		}
     }
 
     void OnFingerUp( FingerUpEvent e )

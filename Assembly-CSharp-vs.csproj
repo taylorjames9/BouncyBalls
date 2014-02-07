@@ -68,6 +68,7 @@
      <Compile Include="Assets\Scripts\Bubble_Individual_Script.cs" />
      <Compile Include="Assets\Scripts\CanonScript.cs" />
      <Compile Include="Assets\Scripts\CanonWCoroutine.cs" />
+     <Compile Include="Assets\Scripts\Finger_React_Script.cs" />
      <Compile Include="Assets\Scripts\Gesture0.cs" />
      <Compile Include="Assets\Scripts\Gui_Adder.cs" />
      <Compile Include="Assets\Scripts\balloonCreator.cs" />

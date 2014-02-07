@@ -31,6 +31,11 @@ public class FingerDownDetector : FingerEventDetector<FingerDownEvent>
 			print ("Yes! I got finger gestures working!");
 			//GameObject prefabulous = Instantiate(Load("Particle System")) as GameObject;
 			//Instantiate(prefabulous, Quaternion.identity);
+
+
+
+
+
             FingerDownEvent e = GetEvent( finger.Index );
             e.Name = MessageName;
             UpdateSelection( e );
